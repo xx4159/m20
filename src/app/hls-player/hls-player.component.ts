@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import videojs from 'video.js';
 
 @Component({
@@ -8,7 +8,10 @@ import videojs from 'video.js';
       <source src="https://29cm-media-upload.s3.ap-northeast-2.amazonaws.com/converted/IMG_8638.m3u8" type="application/x-mpegURL">
     </video>
   `,
-  styles: [],
+  styleUrls: [
+    './hls-player.component.css'
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class HlsPlayerComponent implements OnInit {
   public player: videojs.Player;
