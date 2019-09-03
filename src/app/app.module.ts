@@ -4,12 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DemoComponent } from './demo/demo.component';
 import { PlayComponent } from './play/play.component';
 import { HlsPlayerComponent } from './hls-player/hls-player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DemoComponent,
     PlayComponent,
     HlsPlayerComponent,
   ],
