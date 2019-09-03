@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DemoComponent } from './demo/demo.component';
 import { PlayComponent } from './play/play.component';
+import { SwiperComponent } from './swiper/swiper.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'play',
     component: PlayComponent,
+  },
+  {
+    path: 'swiper',
+    component: SwiperComponent,
   },
 ];
 

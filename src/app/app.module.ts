@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { PlayComponent } from './play/play.component';
 import { HlsPlayerComponent } from './hls-player/hls-player.component';
+import { SwiperComponent } from './swiper/swiper.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HlsPlayerComponent } from './hls-player/hls-player.component';
     DemoComponent,
     PlayComponent,
     HlsPlayerComponent,
+    SwiperComponent,
   ],
   imports: [
     BrowserModule,
