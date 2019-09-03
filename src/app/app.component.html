@@ -1,7 +1,1 @@
-<form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-  <input type="text" id="videoSrc" placeholder="URL 입력" formControlName="src">
-  <input type="hidden" formControlName="type">
-  <button type="submit">수정</button>
-</form>
-
-<app-hls-player #playerContainer></app-hls-player>
+<router-outlet></router-outlet>

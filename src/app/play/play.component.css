@@ -1,0 +1,29 @@
+@import 'https://vjs.zencdn.net/7.6.0/video-js.min.css';
+
+.form {
+  position: relative;
+  padding: 1em 5em 1em 1em;
+  background-color: #f7f7f7;
+}
+.form input {
+  padding: .25em 0;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d5d5d5;
+  background-color: transparent;
+  text-indent: 1.8em;
+  line-height: 1.6em;
+  font-size: 1em;
+}
+.form button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 3em;
+  padding: .25em;
+  border: 0;
+  text-align: center;
+  line-height: 1.6em;
+  font-size: 1em;
+  background-color: #ddd;
+}
