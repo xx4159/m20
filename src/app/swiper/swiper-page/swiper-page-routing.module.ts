@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SwiperComponent } from './swiper.component';
+import { SwiperPageComponent } from './swiper-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SwiperComponent,
-  },
-  {
-    path: 'page',
-    loadChildren: 'app/swiper/swiper-page/swiper-page.module.ts#SwiperPageModule',
+    component: SwiperPageComponent,
   },
 ];
 
@@ -24,4 +20,4 @@ const routes: Routes = [
     RouterModule,
   ]
 })
-export class SwiperRoutingModule {}
+export class SwiperPageRoutingModule {}
