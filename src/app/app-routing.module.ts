@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'swiper',
-    component: SwiperComponent,
+    loadChildren: 'app/swiper/swiper.module.ts#SwiperModule'
   },
 ];
 
