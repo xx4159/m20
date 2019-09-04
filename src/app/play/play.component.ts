@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { HlsPlayerComponent } from '../hls-player/hls-player.component';
+import { HlsPlayerComponent } from '../shared/hls-player/hls-player.component';
 
 @Component({
   selector: 'app-play',
