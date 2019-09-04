@@ -14,7 +14,6 @@ import Swiper from 'swiper/dist/js/swiper.js';
           <div class="swiper-slide">Slide 3</div>
       </div>
   </div>
-  <app-nav></app-nav>
   `,
   styleUrls: [
     './swiper.component.css',

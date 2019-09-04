@@ -2,7 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
-  template: `<div class="nav"></div>`,
+  template: `
+  <div class="nav">
+    <a [routerLink]="['/swiper-test']">default</a>
+    <a [routerLink]="['/swiper-test/page']">page</a>
+  </div>
+  `,
   styles: [
     `
     .nav {
