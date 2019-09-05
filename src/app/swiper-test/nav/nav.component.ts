@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   <div class="nav">
     <a [routerLink]="['/swiper-test']">default</a>
     <a [routerLink]="['/swiper-test/page']">page</a>
+    <a [routerLink]="['/swiper-test/page/1']">page1</a>
   </div>
   `,
   styles: [

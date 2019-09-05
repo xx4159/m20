@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { SwiperPageRoutingModule } from './swiper-page-routing.module';
 import { SwiperPageComponent } from './swiper-page.component';
+import { TvComponent } from './tv/tv.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { SwiperPageComponent } from './swiper-page.component';
   ],
   declarations: [
     SwiperPageComponent,
+    TvComponent,
   ],
   providers: [
   ]
