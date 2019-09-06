@@ -19,6 +19,6 @@ export class HlsPlayerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.player = videojs('player', { fluid: true });
+    this.player = videojs('player', { fluid: true, aspectRatio: '9:16' });
   }
 }
