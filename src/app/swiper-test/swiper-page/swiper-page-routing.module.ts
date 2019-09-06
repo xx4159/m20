@@ -11,11 +11,11 @@ const routes: Routes = [
     children: [
       {
         path: ':id',
-        component: TvComponent
+        component: TvComponent,
       },
       {
         path: '',
-        component: TvComponent
+        component: TvComponent,
       },
     ],
   },
@@ -23,12 +23,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(
-      routes,
-    )
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule,
-  ]
+  ],
 })
 export class SwiperPageRoutingModule {}

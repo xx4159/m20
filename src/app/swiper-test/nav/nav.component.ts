@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
     <a [routerLink]="['/swiper-test']">default</a>
     <a [routerLink]="['/swiper-test/page']">page</a>
     <a [routerLink]="['/swiper-test/page/1']">page1</a>
+    <a [routerLink]="['/swiper-test/page/2']">page2</a>
+    <a [routerLink]="['/swiper-test/page/3']">page3</a>
   </div>
   `,
   styles: [

@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tv',
-  template: `{{ id }}`,
+  template: `Slide {{ id }}`,
+  styles: [
+    `
+    :host {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    `
+  ],
 })
-export class TvComponent {
+export class TvComponent implements OnInit {
 
   id: number;
 
