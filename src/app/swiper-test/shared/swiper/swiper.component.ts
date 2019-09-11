@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, ViewEncapsulation, AfterContentInit, Output } from '@angular/core';
 import Swiper from 'swiper/dist/js/swiper.js';
 
 @Component({
@@ -8,23 +8,41 @@ import Swiper from 'swiper/dist/js/swiper.js';
   <div class="swiper-container">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
+        <!-- Slides -->
+        <ng-content></ng-content>
       </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
   </div>
   `,
   styleUrls: [
     './swiper.component.css',
   ],
+  encapsulation: ViewEncapsulation.None,
 })
-export class SwiperComponent implements OnInit {
+export class SwiperComponent implements AfterContentInit {
+  swiper: Swiper;
+
+  @Output('slideChangeTransitionStart') slideChangeTransitionStart = new EventEmitter<Swiper>();
+  @Output('slideChangeTransitionEnd') slideChangeTransitionEnd = new EventEmitter<Swiper>();
+
   constructor() { }
 
-  ngOnInit() {
-    const mySwiper = new Swiper('.swiper-container', {
+  ngAfterContentInit() {
+    this.swiper = new Swiper('.swiper-container', {
       direction: 'vertical',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        slideChangeTransitionStart: () => {
+          this.slideChangeTransitionStart.emit(this.swiper);
+        },
+        slideChangeTransitionEnd: () => {
+          this.slideChangeTransitionEnd.emit(this.swiper);
+        },
+      }
       // replaceState 가 `false` 라서 뒤로가기 하면 이전 슬라이드로 이동
       // hashNavigation: true
 

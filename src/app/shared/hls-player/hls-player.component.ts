@@ -37,12 +37,12 @@ export class HlsPlayerComponent implements OnInit, OnDestroy {
     this.player.load();
   }
 
-  private play() {
+  public play() {
     console.log('PLAY --', this.player);
     this.player.play();
   }
 
-  private pause() {
+  public pause() {
     console.log('PAUSE --', this.player);
     this.player.pause();
   }
