@@ -1,24 +1,49 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import videojs from 'video.js';
 
 @Component({
   selector: 'app-hls-player',
   template: `
-    <video id="player" class="video-js" controls muted autoplay playsinline>
-      <source src="https://29cm-media-upload.s3.ap-northeast-2.amazonaws.com/converted/IMG_8638.m3u8" type="application/x-mpegURL">
-    </video>
+    <video #target class="video-js" controls muted playsinline></video>
   `,
   styleUrls: [
     './hls-player.component.css'
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-export class HlsPlayerComponent implements OnInit {
-  public player: videojs.Player;
+export class HlsPlayerComponent implements OnInit, OnDestroy {
+  @ViewChild('target') target: ElementRef;
+  @Input() src: string;
+  @Input() autoplay = false;
+  player: videojs.Player;
 
-  constructor() { }
+  constructor(
+    private elementRef: ElementRef,
+  ) { }
 
   ngOnInit() {
-    this.player = videojs('player', { fluid: true, aspectRatio: '9:16' });
+    this.player = videojs(this.target.nativeElement, { fluid: true, aspectRatio: '9:16', autoplay: this.autoplay });
+    this.player.src({ src: this.src, type: 'application/x-mpegURL'});
+    this.player.load();
+  }
+
+  ngOnDestroy() {
+    this.player.dispose();
+  }
+
+  public changeSrc(src: string) {
+    this.player.pause();
+    this.player.src({ src: this.src, type: 'application/x-mpegURL'});
+    this.player.load();
+  }
+
+  private play() {
+    console.log('PLAY --', this.player);
+    this.player.play();
+  }
+
+  private pause() {
+    console.log('PAUSE --', this.player);
+    this.player.pause();
   }
 }
