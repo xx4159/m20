@@ -1,11 +1,12 @@
-import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, ViewChildren, QueryList, AfterViewInit, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HlsPlayerComponent } from '../../shared/hls-player/hls-player.component';
 import videojs from 'video.js';
 
 @Component({
   selector: 'app-swiper-default',
   template: `
-  <app-swiper (slideChangeTransitionStart)="onslideChangeTransitionStart($event)" (slideChangeTransitionEnd)="onslideChangeTransitionEnd($event)">
+  <app-swiper [initialSlide]="id" (slideChangeTransitionStart)="onslideChangeTransitionStart($event)" (slideChangeTransitionEnd)="onslideChangeTransitionEnd($event)">
     <div class="swiper-slide" *ngFor="let item of data">
       <app-hls-player #playerContainer [src]="item"></app-hls-player>
     </div>
@@ -13,16 +14,25 @@ import videojs from 'video.js';
   </app-swiper>
   `
 })
-export class SwiperDefaultComponent implements AfterViewInit {
+export class SwiperDefaultComponent implements OnInit, AfterViewInit {
   @ViewChildren('playerContainer') playerContainer: QueryList<HlsPlayerComponent>;
   players: HlsPlayerComponent[];
+  id: number;
   data = [
     'https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
     'https://29cm-media-upload.s3.ap-northeast-2.amazonaws.com/converted/IMG_8638.m3u8',
   ];
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
   ) {
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.id = params.id;
+    });
   }
 
   ngAfterViewInit() {

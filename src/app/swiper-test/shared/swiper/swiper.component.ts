@@ -1,4 +1,4 @@
-import { Component, EventEmitter, ViewEncapsulation, AfterContentInit, Output } from '@angular/core';
+import { Component, EventEmitter, ViewEncapsulation, AfterContentInit, Input, Output } from '@angular/core';
 import Swiper from 'swiper/dist/js/swiper.js';
 
 @Component({
@@ -23,6 +23,7 @@ import Swiper from 'swiper/dist/js/swiper.js';
 export class SwiperComponent implements AfterContentInit {
   swiper: Swiper;
 
+  @Input() initialSlide: number;
   @Output('slideChangeTransitionStart') slideChangeTransitionStart = new EventEmitter<Swiper>();
   @Output('slideChangeTransitionEnd') slideChangeTransitionEnd = new EventEmitter<Swiper>();
 
@@ -30,6 +31,7 @@ export class SwiperComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     this.swiper = new Swiper('.swiper-container', {
+      initialSlide: this.initialSlide,
       direction: 'vertical',
       navigation: {
         nextEl: '.swiper-button-next',

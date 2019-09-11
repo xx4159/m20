@@ -10,7 +10,7 @@ const routes: Routes = [
     component: SwiperTestComponent,
     children: [
       {
-        path: '',
+        path: ':id',
         component: SwiperDefaultComponent,
       },
       {
