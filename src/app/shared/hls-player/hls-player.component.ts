@@ -4,7 +4,7 @@ import videojs from 'video.js';
 @Component({
   selector: 'app-hls-player',
   template: `
-    <video #target class="video-js" controls muted playsinline></video>
+    <video #target class="video-js" controls muted playsinline preload="none"></video>
   `,
   styleUrls: [
     './hls-player.component.css'
