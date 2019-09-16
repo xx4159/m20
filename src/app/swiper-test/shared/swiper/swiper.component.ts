@@ -39,10 +39,15 @@ export class SwiperComponent implements AfterContentInit {
       },
       on: {
         slideChangeTransitionStart: () => {
-          this.slideChangeTransitionStart.emit(this.swiper);
+          // initialSlide 가 0이 아닐 때 N번째 슬라이드로 이동하면서 transition 이벤트가 발생하고 `this.swiper`가 `null`로 나온다
+          if (this.swiper) {
+            this.slideChangeTransitionStart.emit(this.swiper);
+          }
         },
         slideChangeTransitionEnd: () => {
-          this.slideChangeTransitionEnd.emit(this.swiper);
+          if (this.swiper) {
+            this.slideChangeTransitionEnd.emit(this.swiper);
+          }
         },
       }
       // replaceState 가 `false` 라서 뒤로가기 하면 이전 슬라이드로 이동

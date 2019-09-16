@@ -31,14 +31,14 @@ export class SwiperDefaultComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params.id;
+      this.id = +params.id;
     });
   }
 
   ngAfterViewInit() {
     console.log('PLAYERS --', videojs.getPlayers())
     this.players = this.playerContainer.toArray();
-    const player = this.players[0];
+    const player = this.players[this.id];
     player.play();
   }
 
