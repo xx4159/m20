@@ -10,7 +10,6 @@ import videojs from 'video.js';
     <div class="swiper-slide" *ngFor="let item of data">
       <app-hls-player #playerContainer [src]="item"></app-hls-player>
     </div>
-    <div class="swiper-slide">Slide 3</div>
   </app-swiper>
   `
 })
@@ -19,6 +18,7 @@ export class SwiperDefaultComponent implements OnInit, AfterViewInit {
   players: HlsPlayerComponent[];
   id: number;
   data = [
+    'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8',
     'https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
     'https://29cm-media-upload.s3.ap-northeast-2.amazonaws.com/converted/IMG_8638.m3u8',
   ];
