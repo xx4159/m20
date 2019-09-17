@@ -7,6 +7,7 @@ import { SwiperTestComponent } from './swiper-test.component';
 import { SwiperComponent } from './shared/swiper/swiper.component';
 import { NavComponent } from './nav/nav.component';
 import { SwiperDefaultComponent } from './swiper-default/swiper-default.component';
+import { ShareComponent } from './share/share.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { SwiperDefaultComponent } from './swiper-default/swiper-default.componen
     SwiperComponent,
     NavComponent,
     SwiperDefaultComponent,
+    ShareComponent,
   ],
   providers: [
   ]

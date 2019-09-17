@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SwiperTestComponent } from './swiper-test.component';
 import { SwiperDefaultComponent } from './swiper-default/swiper-default.component';
+import { ShareComponent } from './share/share.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,12 @@ const routes: Routes = [
       {
         path: ':id',
         component: SwiperDefaultComponent,
+        children: [
+          {
+            path: 'share',
+            component: ShareComponent,
+          }
+        ]
       },
       {
         path: 'page',

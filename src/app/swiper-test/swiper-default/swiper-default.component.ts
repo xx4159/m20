@@ -9,8 +9,10 @@ import videojs from 'video.js';
   <app-swiper [initialSlide]="index" (slideChangeTransitionStart)="onslideChangeTransitionStart($event)" (slideChangeTransitionEnd)="onslideChangeTransitionEnd($event)">
     <div class="swiper-slide" *ngFor="let item of data">
       <app-hls-player #playerContainer [src]="item.src"></app-hls-player>
+      <a [routerLink]="['./share']" skipLocationChange>공유하기</a>
     </div>
   </app-swiper>
+  <router-outlet></router-outlet>
   `
 })
 export class SwiperDefaultComponent implements OnInit, AfterViewInit {
