@@ -11,8 +11,8 @@ import Swiper from 'swiper/dist/js/swiper.js';
         <!-- Slides -->
         <ng-content></ng-content>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <!-- <div class="swiper-button-prev"></div> -->
+      <!-- <div class="swiper-button-next"></div> -->
   </div>
   `,
   styleUrls: [
@@ -33,10 +33,10 @@ export class SwiperComponent implements AfterContentInit {
     this.swiper = new Swiper('.swiper-container', {
       initialSlide: this.initialSlide,
       direction: 'vertical',
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
       on: {
         slideChangeTransitionStart: () => {
           // initialSlide 가 0이 아닐 때 N번째 슬라이드로 이동하면서 transition 이벤트가 발생하고 `this.swiper`가 `null`로 나온다
