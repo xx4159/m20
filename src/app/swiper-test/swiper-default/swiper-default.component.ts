@@ -52,5 +52,6 @@ export class SwiperDefaultComponent implements OnInit, AfterViewInit {
     const { activeIndex } = swiper;
     const player = this.players[activeIndex];
     player.play();
+    this.router.navigate(['swiper-test', activeIndex], { replaceUrl: true });
   }
 }
