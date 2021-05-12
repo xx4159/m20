@@ -26,7 +26,7 @@
     "core-js": "^2.4.1",
     "intersection-observer": "^0.7.0",
     "rxjs": "^5.1.0",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "video.js": "^7.6.0",
     "zone.js": "^0.8.4"
   },
